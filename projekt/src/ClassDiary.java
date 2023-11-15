@@ -6,4 +6,5 @@ public class ClassDiary {
     private String nameOfClass;
     private List<Student> students;
     private Map<Name, String> absentStudents;
+
 }
