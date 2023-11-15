@@ -3,6 +3,7 @@ import com.google.gson.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,11 +54,13 @@ public class Main {
 
                     // Átlag számítás
                     float sum = 0;
+                    DecimalFormat df = new DecimalFormat();
+                    df.setMaximumFractionDigits(2);
                     for (JsonElement gradeElement : gradesArray) {
                         sum += gradeElement.getAsInt();
                     }
                     float average = sum / gradesArray.size();
-                    System.out.println("  Subject: " + subject + ", Grades: " + gradesArray.toString() + ", Average: " + average);
+                    System.out.println("  Subject: " + subject + ", Grades: " + gradesArray.toString() + ", Average: " + df.format(average));
                 }
 
                 boolean isPresent = studentObject.get("isPresent").getAsBoolean();
