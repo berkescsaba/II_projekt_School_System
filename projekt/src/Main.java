@@ -8,7 +8,10 @@ public class Main {
     public static void main(String[] args) {
 
 //        JsonWork.jsonPrint();
-        MenuSelect.mainMenu();
+
+        JsonWork.searchTeacher("János");
+
+//        MenuSelect.mainMenu();
     }
 }
 

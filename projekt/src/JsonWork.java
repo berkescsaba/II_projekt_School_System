@@ -1,11 +1,17 @@
-import com.google.gson.*;
+
 import java.io.IOException;
+import java.text.DecimalFormat;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
+
 public class JsonWork {
-    public static void jsonPrint(){
+    public static void jsonPrint() {
         String filePath = "projekt/src/diary.json";
+
 
         try {
             // Tartalom beolvasása JSON-bol
@@ -39,11 +45,12 @@ public class JsonWork {
                 JsonObject nameObject = studentObject.getAsJsonObject("name");
                 String firstName = nameObject.get("firstName").getAsString();
                 String lastName = nameObject.get("lastName").getAsString();
+                int sclass = studentObject.get("sclass").getAsInt();
 
                 JsonObject subjectsAndGradeListObject = studentObject.getAsJsonObject("subjectsAndGradeList");
 
                 // student adatok kiíratása
-                System.out.println("Student ID: " + studentId + ", Name: " + firstName + " " + lastName);
+                System.out.println("Student ID: " + studentId + ", Name: " + firstName + " " + lastName + ", Class: " + sclass);
 
                 // subjects és grades kiíratás és átlag számolás
                 for (String subject : subjectsAndGradeListObject.keySet()) {
@@ -59,9 +66,33 @@ public class JsonWork {
                     float average = sum / gradesArray.size();
                     System.out.println("  Subject: " + subject + ", Grades: " + gradesArray.toString() + ", Average: " + df.format(average));
                 }
-
                 boolean isPresent = studentObject.get("isPresent").getAsBoolean();
                 System.out.println("  Present: " + isPresent);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void searchTeacher(String searchTerm) {
+        String filePath = "projekt/src/diary.json";
+        String searchName = searchTerm;
+
+        try {
+            String jsonString = new String(Files.readAllBytes(Paths.get(filePath)));
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
+
+            JsonArray teachersArray = jsonObject.getAsJsonArray("teacher");
+            for (JsonElement teacherElement : teachersArray) {
+                JsonObject teacherObject = teacherElement.getAsJsonObject();
+                String firstName = teacherObject.get("firstName").getAsString();
+                String lastName = teacherObject.get("lastName").getAsString();
+                String subject = teacherObject.get("subject").getAsString();
+                if (firstName.equals(searchName) || lastName.equals(searchName)) {
+                    //  kiíratása
+                    System.out.println("Teacher: " + firstName + " " + lastName + ", Subject: " + subject);
+                }
             }
 
         } catch (IOException e) {

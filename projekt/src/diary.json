@@ -3,47 +3,47 @@
     {
       "firstName": "Semmelweis",
       "lastName": "Ignác",
-      "subejct": "MATEK"
+      "subject": "MATEK"
     },
     {
       "firstName": "Irinyi",
       "lastName": "János",
-      "subejct": "MAGYAR"
+      "subject": "MAGYAR"
     },
     {
       "firstName": "Eötvös",
       "lastName": "Loránd",
-      "subejct": "FÖLDRAJZ"
+      "subject": "FÖLDRAJZ"
     },
     {
       "firstName": "Jedlik",
       "lastName": "Ányos",
-      "subejct": "TÖRTÉNELEM"
+      "subject": "TÖRTÉNELEM"
     },
     {
       "firstName": "Teller",
       "lastName": "Ede",
-      "subejct": "ZENE"
+      "subject": "ZENE"
     },
     {
       "firstName": "Telkes",
       "lastName": "Mária",
-      "subejct": "BIOLÓGIA"
+      "subject": "BIOLÓGIA"
     },
     {
       "firstName": "Tihanyi",
       "lastName": "Kálmán",
-      "subejct": "KÉMIA"
+      "subject": "KÉMIA"
     },
     {
       "firstName": "Neumann",
       "lastName": "János",
-      "subejct": "FIZIKA"
+      "subject": "FIZIKA"
     },
     {
       "firstName": "Asboth",
       "lastName": "Oszkár",
-      "subejct": "TESTNEVELÉS"
+      "subject": "TESTNEVELÉS"
     }
   ],
   "student": [
@@ -53,6 +53,7 @@
         "firstName": "Bakaity-Nagy",
         "lastName": "Viola"
       },
+      "sclass": 8,
       "subjectsAndGradeList": {
         "MATEK": [5, 4, 2],
         "MAGYAR": [3, 4],
@@ -72,6 +73,7 @@
         "firstName": "Berkes",
         "lastName": "Csaba"
       },
+      "sclass": 4,
       "subjectsAndGradeList": {
         "MATEK": [5, 4, 3],
         "MAGYAR": [3, 2, 1],
@@ -91,6 +93,7 @@
         "firstName": "Gárgyán",
         "lastName": "Barbara"
       },
+      "sclass": 3,
       "subjectsAndGradeList": {
         "MATEK": [4, 4, 4],
         "MAGYAR": [4, 4],
@@ -110,6 +113,7 @@
         "firstName": "Kecskés",
         "lastName": "István"
       },
+      "sclass": 2,
       "subjectsAndGradeList": {
         "MATEK": [2, 5, 5],
         "MAGYAR": [2, 3],
@@ -129,6 +133,7 @@
         "firstName": "Lázár",
         "lastName": "Norbert"
       },
+      "sclass": 5,
       "subjectsAndGradeList": {
         "MATEK": [5, 3, 3],
         "MAGYAR": [3, 3],
@@ -148,6 +153,7 @@
         "firstName": "Markovic",
         "lastName": "Olivér"
       },
+      "sclass": 8,
       "subjectsAndGradeList": {
         "MATEK": [4, 4, 3],
         "MAGYAR": [2, 2],
@@ -167,6 +173,7 @@
         "firstName": "Máté",
         "lastName": "Balázs"
       },
+      "sclass": 4,
       "subjectsAndGradeList": {
         "MATEK": [5, 5],
         "MAGYAR": [5, 5],
@@ -186,6 +193,7 @@
         "firstName": "Mester",
         "lastName": "Péter"
       },
+      "sclass": 3,
       "subjectsAndGradeList": {
         "MATEK": [5, 5, 5],
         "MAGYAR": [5, 5],
@@ -205,6 +213,7 @@
         "firstName": "Mucsányi",
         "lastName": "Dávid"
       },
+      "sclass": 2,
       "subjectsAndGradeList": {
         "MATEK": [4, 5, 2],
         "MAGYAR": [4, 2],
@@ -224,6 +233,7 @@
         "firstName": "Raffai",
         "lastName": "István"
       },
+      "sclass": 8,
       "subjectsAndGradeList": {
         "MATEK": [2, 5, 5],
         "MAGYAR": [2, 3],
@@ -243,6 +253,7 @@
         "firstName": "Rudics",
         "lastName": "István"
       },
+      "sclass": 5,
       "subjectsAndGradeList": {
         "MATEK": [5, 3, 3],
         "MAGYAR": [3, 3],
@@ -262,6 +273,7 @@
         "firstName": "Simon",
         "lastName": "Lara"
       },
+      "sclass": 5,
       "subjectsAndGradeList": {
         "MATEK": [5, 5, 3],
         "MAGYAR": [3, 1, 2],
@@ -281,6 +293,7 @@
         "firstName": "Tóth",
         "lastName": "Tass"
       },
+      "sclass": 4,
       "subjectsAndGradeList": {
         "MATEK": [5, 5, 3],
         "MAGYAR": [3, 5, 4],
@@ -300,6 +313,7 @@
         "firstName": "Farkas",
         "lastName": "Vendel"
       },
+      "sclass": 3,
       "subjectsAndGradeList": {
         "MATEK": [5, 5, 3],
         "MAGYAR": [3, 2, 4],
@@ -319,6 +333,7 @@
         "firstName": "Csanki",
         "lastName": "Richárd"
       },
+      "sclass": 2,
       "subjectsAndGradeList": {
         "MATEK": [2, 5, 5],
         "MAGYAR": [5, 1],
