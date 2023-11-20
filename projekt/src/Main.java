@@ -25,6 +25,7 @@ public class Main {
 
         JSONObject main = new JSONObject();
 
+
         JSONArray teacher = new JSONArray();
         Map m = new LinkedHashMap(3);
         m.put("firstName", "Nagy");
@@ -32,6 +33,8 @@ public class Main {
         m.put("subject", "MATEK");
 
         teacher.add(m);
+
+
 
         main.put("teacher", teacher);
 
