@@ -1,21 +1,21 @@
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class JsonWork {
+public class SearchInJson {
     public static void jsonPrint() {
-        String filePath = "projekt/src/diary.json";
-
 
         try {
             // Tartalom beolvasása JSON-bol
-            String jsonString = new String(Files.readAllBytes(Paths.get(filePath)));
+            String jsonString = new String(Files.readAllBytes(Paths.get(FilePath.DIARY)));
 
             // Gson létrehozása
             Gson gson = new Gson();

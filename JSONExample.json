@@ -1,7 +1,791 @@
-[
-  {
-    "firstName": "Nagy",
-    "lastName": "Pista",
-    "subject": "MATEK"
-  }
-]
+{
+  "teacher": [
+    {
+      "firstName": "Semmelweis",
+      "lastName": "Ignác",
+      "subject": "MATEK"
+    },
+    {
+      "firstName": "Irinyi",
+      "lastName": "János",
+      "subject": "MAGYAR"
+    },
+    {
+      "firstName": "Eötvös",
+      "lastName": "Loránd",
+      "subject": "FÖLDRAJZ"
+    },
+    {
+      "firstName": "Jedlik",
+      "lastName": "Ányos",
+      "subject": "TÖRTÉNELEM"
+    },
+    {
+      "firstName": "Teller",
+      "lastName": "Ede",
+      "subject": "ZENE"
+    },
+    {
+      "firstName": "Telkes",
+      "lastName": "Mária",
+      "subject": "BIOLÓGIA"
+    },
+    {
+      "firstName": "Tihanyi",
+      "lastName": "Kálmán",
+      "subject": "KÉMIA"
+    },
+    {
+      "firstName": "Neumann",
+      "lastName": "János",
+      "subject": "FIZIKA"
+    },
+    {
+      "firstName": "Asboth",
+      "lastName": "Oszkár",
+      "subject": "TESTNEVELÉS"
+    }
+  ],
+  "student": [
+    {
+      "id": 1,
+      "name": {
+        "firstName": "Bakaity-Nagy",
+        "lastName": "Viola"
+      },
+      "sclass": 8,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          4,
+          2
+        ],
+        "MAGYAR": [
+          3,
+          4
+        ],
+        "FÖLDRAJZ": [
+          2,
+          3,
+          4
+        ],
+        "TÖRTÉNELEM": [
+          5,
+          5
+        ],
+        "ZENE": [
+          5
+        ],
+        "BIOLÓGIA": [
+          1,
+          4
+        ],
+        "KÉMIA": [
+          2,
+          5
+        ],
+        "FIZIKA": [
+          5,
+          5
+        ],
+        "TESTNEVELÉS": [
+          4,
+          4,
+          4
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 2,
+      "name": {
+        "firstName": "Berkes",
+        "lastName": "Csaba"
+      },
+      "sclass": 4,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          4,
+          3
+        ],
+        "MAGYAR": [
+          3,
+          2,
+          1
+        ],
+        "FÖLDRAJZ": [
+          4,
+          2,
+          2
+        ],
+        "TÖRTÉNELEM": [
+          4,
+          4
+        ],
+        "ZENE": [
+          1,
+          5
+        ],
+        "BIOLÓGIA": [
+          5,
+          5
+        ],
+        "KÉMIA": [
+          2,
+          3,
+          4
+        ],
+        "FIZIKA": [
+          5,
+          2,
+          1
+        ],
+        "TESTNEVELÉS": [
+          5,
+          5
+        ]
+      },
+      "isPresent": false
+    },
+    {
+      "id": 3,
+      "name": {
+        "firstName": "Gárgyán",
+        "lastName": "Barbara"
+      },
+      "sclass": 3,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          4,
+          4,
+          4
+        ],
+        "MAGYAR": [
+          4,
+          4
+        ],
+        "FÖLDRAJZ": [
+          4,
+          5
+        ],
+        "TÖRTÉNELEM": [
+          5,
+          5
+        ],
+        "ZENE": [
+          5,
+          5
+        ],
+        "BIOLÓGIA": [
+          4,
+          4,
+          4
+        ],
+        "KÉMIA": [
+          3,
+          3,
+          4
+        ],
+        "FIZIKA": [
+          5,
+          5
+        ],
+        "TESTNEVELÉS": [
+          5,
+          5
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 4,
+      "name": {
+        "firstName": "Kecskés",
+        "lastName": "István"
+      },
+      "sclass": 2,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          2,
+          5,
+          5
+        ],
+        "MAGYAR": [
+          2,
+          3
+        ],
+        "FÖLDRAJZ": [
+          4,
+          4
+        ],
+        "TÖRTÉNELEM": [
+          5,
+          5
+        ],
+        "ZENE": [
+          1,
+          2,
+          3
+        ],
+        "BIOLÓGIA": [
+          3,
+          2,
+          3
+        ],
+        "KÉMIA": [
+          4,
+          5
+        ],
+        "FIZIKA": [
+          2
+        ],
+        "TESTNEVELÉS": [
+          5,
+          5
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 5,
+      "name": {
+        "firstName": "Lázár",
+        "lastName": "Norbert"
+      },
+      "sclass": 5,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          3,
+          3
+        ],
+        "MAGYAR": [
+          3,
+          3
+        ],
+        "FÖLDRAJZ": [
+          2
+        ],
+        "TÖRTÉNELEM": [
+          2,
+          4
+        ],
+        "ZENE": [
+          1,
+          5
+        ],
+        "BIOLÓGIA": [
+          3,
+          2
+        ],
+        "KÉMIA": [
+          5,
+          5
+        ],
+        "FIZIKA": [
+          3,
+          1
+        ],
+        "TESTNEVELÉS": [
+          1,
+          2
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 6,
+      "name": {
+        "firstName": "Markovic",
+        "lastName": "Olivér"
+      },
+      "sclass": 8,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          4,
+          4,
+          3
+        ],
+        "MAGYAR": [
+          2,
+          2
+        ],
+        "FÖLDRAJZ": [
+          4
+        ],
+        "TÖRTÉNELEM": [
+          4,
+          3
+        ],
+        "ZENE": [
+          5
+        ],
+        "BIOLÓGIA": [
+          3
+        ],
+        "KÉMIA": [
+          3,
+          2
+        ],
+        "FIZIKA": [
+          4,
+          2
+        ],
+        "TESTNEVELÉS": [
+          2,
+          5
+        ]
+      },
+      "isPresent": false
+    },
+    {
+      "id": 7,
+      "name": {
+        "firstName": "Máté",
+        "lastName": "Balázs"
+      },
+      "sclass": 4,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          5
+        ],
+        "MAGYAR": [
+          5,
+          5
+        ],
+        "FÖLDRAJZ": [
+          5
+        ],
+        "TÖRTÉNELEM": [
+          5,
+          5
+        ],
+        "ZENE": [
+          5
+        ],
+        "BIOLÓGIA": [
+          5
+        ],
+        "KÉMIA": [
+          5
+        ],
+        "FIZIKA": [
+          5
+        ],
+        "TESTNEVELÉS": [
+          5
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 8,
+      "name": {
+        "firstName": "Mester",
+        "lastName": "Péter"
+      },
+      "sclass": 3,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          5,
+          5
+        ],
+        "MAGYAR": [
+          5,
+          5
+        ],
+        "FÖLDRAJZ": [
+          5
+        ],
+        "TÖRTÉNELEM": [
+          5,
+          5
+        ],
+        "ZENE": [
+          5
+        ],
+        "BIOLÓGIA": [
+          5
+        ],
+        "KÉMIA": [
+          5
+        ],
+        "FIZIKA": [
+          5
+        ],
+        "TESTNEVELÉS": [
+          5
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 9,
+      "name": {
+        "firstName": "Mucsányi",
+        "lastName": "Dávid"
+      },
+      "sclass": 2,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          4,
+          5,
+          2
+        ],
+        "MAGYAR": [
+          4,
+          2
+        ],
+        "FÖLDRAJZ": [
+          1,
+          3
+        ],
+        "TÖRTÉNELEM": [
+          3,
+          4
+        ],
+        "ZENE": [
+          2,
+          2
+        ],
+        "BIOLÓGIA": [
+          5
+        ],
+        "KÉMIA": [
+          3,
+          4
+        ],
+        "FIZIKA": [
+          4,
+          5
+        ],
+        "TESTNEVELÉS": [
+          2,
+          1
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 10,
+      "name": {
+        "firstName": "Raffai",
+        "lastName": "István"
+      },
+      "sclass": 8,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          2,
+          5,
+          5
+        ],
+        "MAGYAR": [
+          2,
+          3
+        ],
+        "FÖLDRAJZ": [
+          4,
+          4
+        ],
+        "TÖRTÉNELEM": [
+          5,
+          5
+        ],
+        "ZENE": [
+          1,
+          2,
+          3
+        ],
+        "BIOLÓGIA": [
+          3,
+          2,
+          3
+        ],
+        "KÉMIA": [
+          4,
+          5
+        ],
+        "FIZIKA": [
+          2
+        ],
+        "TESTNEVELÉS": [
+          5,
+          5
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 11,
+      "name": {
+        "firstName": "Rudics",
+        "lastName": "István"
+      },
+      "sclass": 5,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          3,
+          3
+        ],
+        "MAGYAR": [
+          3,
+          3
+        ],
+        "FÖLDRAJZ": [
+          2
+        ],
+        "TÖRTÉNELEM": [
+          2,
+          4
+        ],
+        "ZENE": [
+          1,
+          5
+        ],
+        "BIOLÓGIA": [
+          3,
+          2
+        ],
+        "KÉMIA": [
+          5,
+          5
+        ],
+        "FIZIKA": [
+          3,
+          1
+        ],
+        "TESTNEVELÉS": [
+          1,
+          2
+        ]
+      },
+      "isPresent": false
+    },
+    {
+      "id": 12,
+      "name": {
+        "firstName": "Simon",
+        "lastName": "Lara"
+      },
+      "sclass": 5,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          5,
+          3
+        ],
+        "MAGYAR": [
+          3,
+          1,
+          2
+        ],
+        "FÖLDRAJZ": [
+          2,
+          1,
+          3
+        ],
+        "TÖRTÉNELEM": [
+          4,
+          4,
+          3
+        ],
+        "ZENE": [
+          5,
+          2,
+          3
+        ],
+        "BIOLÓGIA": [
+          5,
+          2,
+          4
+        ],
+        "KÉMIA": [
+          4,
+          2,
+          4
+        ],
+        "FIZIKA": [
+          3,
+          2,
+          3
+        ],
+        "TESTNEVELÉS": [
+          2,
+          2,
+          3
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 13,
+      "name": {
+        "firstName": "Tóth",
+        "lastName": "Tass"
+      },
+      "sclass": 4,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          5,
+          3
+        ],
+        "MAGYAR": [
+          3,
+          5,
+          4
+        ],
+        "FÖLDRAJZ": [
+          2,
+          5,
+          3
+        ],
+        "TÖRTÉNELEM": [
+          2,
+          2,
+          3
+        ],
+        "ZENE": [
+          2,
+          2,
+          5
+        ],
+        "BIOLÓGIA": [
+          5,
+          2,
+          3
+        ],
+        "KÉMIA": [
+          2,
+          5,
+          3
+        ],
+        "FIZIKA": [
+          1,
+          5,
+          3
+        ],
+        "TESTNEVELÉS": [
+          4,
+          2,
+          3
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 14,
+      "name": {
+        "firstName": "Farkas",
+        "lastName": "Vendel"
+      },
+      "sclass": 3,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          5,
+          5,
+          3
+        ],
+        "MAGYAR": [
+          3,
+          2,
+          4
+        ],
+        "FÖLDRAJZ": [
+          2,
+          3,
+          3
+        ],
+        "TÖRTÉNELEM": [
+          2,
+          1,
+          3
+        ],
+        "ZENE": [
+          2,
+          2,
+          1
+        ],
+        "BIOLÓGIA": [
+          1,
+          2,
+          3
+        ],
+        "KÉMIA": [
+          2,
+          1,
+          5
+        ],
+        "FIZIKA": [
+          2,
+          1,
+          4
+        ],
+        "TESTNEVELÉS": [
+          1,
+          2,
+          3
+        ]
+      },
+      "isPresent": true
+    },
+    {
+      "id": 15,
+      "name": {
+        "firstName": "Csanki",
+        "lastName": "Richárd"
+      },
+      "sclass": 2,
+      "subjectsAndGradeList": {
+        "MATEK": [
+          2,
+          5,
+          5
+        ],
+        "MAGYAR": [
+          5,
+          1
+        ],
+        "FÖLDRAJZ": [
+          5,
+          2,
+          3
+        ],
+        "TÖRTÉNELEM": [
+          2,
+          5,
+          5
+        ],
+        "ZENE": [
+          5,
+          2,
+          5
+        ],
+        "BIOLÓGIA": [
+          5,
+          4,
+          3
+        ],
+        "KÉMIA": [
+          1,
+          5
+        ],
+        "FIZIKA": [
+          1,
+          2,
+          3
+        ],
+        "TESTNEVELÉS": [
+          5,
+          5,
+          5
+        ]
+      },
+      "isPresent": true
+    }
+  ]
+}
