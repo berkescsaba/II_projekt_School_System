@@ -6,9 +6,6 @@ public class Main {
 //        JsonWork.jsonPrint();
 //        SearchInJson.searchTeacher("János"); // Keresés
         MenuSelect.mainMenu();
-
-
-
     }
 }
 

@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 
 public class SearchInJson {
     /**
-     * Minden adatok kiír ami a a DIARY JSON-ben található, formázva.
+     * Minden adatok kiír ami a DIARY JSON-ben található, formázva.
      */
     public static void jsonPrint() {
 

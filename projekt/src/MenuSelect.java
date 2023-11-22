@@ -2,12 +2,21 @@ import java.util.Scanner;
 
 public class MenuSelect {
 
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+    public final static void clearConsole() {
+        try {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                Runtime.getRuntime().exec("cls");
+            } else {
+                Runtime.getRuntime().exec("clear");
+            }
+        } catch (final Exception e) {
+        }
     }
 
     public static void mainMenu() {
+        clearConsole();
         try {
             System.out.println("Üdvözöllek!");
             System.out.println("Írj be egy számot a kívánt funkció használatához: ");
@@ -39,6 +48,7 @@ public class MenuSelect {
     }
 
     public static void diakMenu() {
+        clearConsole();
         try {
             System.out.println("Írj be egy számot a kívánt funkció használatához: ");
             Scanner scanner = new Scanner(System.in);
@@ -62,6 +72,7 @@ public class MenuSelect {
     }
 
     public static void osztalyMenu() {
+        clearConsole();
         try {
             System.out.println("Írj be egy számot a kívánt funkció használatához: ");
             Scanner scanner = new Scanner(System.in);
@@ -83,26 +94,18 @@ public class MenuSelect {
             System.out.println("Csak 1 és 2 közül válszthatsz!!!");
         }
     }
+
     public static void tanarMenu() {
+        clearConsole();
         try {
             System.out.println("Írd be a tanár kereszt vagy vezetéknevét:");
             Scanner scanner = new Scanner(System.in);
-            while (true) {
+
                 String input = scanner.nextLine();
                 SearchInJson.searchTeacher(input);
-//                if (input == 1) {
-//                    System.out.println("Add meg a diák nevét");
-//                    break;
-//                } else if (input == 2) {
-//                    System.out.println("Add meg a diák nevét majd a tantárgy nevét");
-//                    break;
-//                } else {
-//                    System.out.println("Rossz szám");
-//                }
 
-            }
         } catch (Exception e) {
-            System.out.println("Csak 1 és 2 közül válszthatsz!!!");
+            System.out.println("Csak betűket használhatsz!");
         }
     }
 }
