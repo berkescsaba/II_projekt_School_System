@@ -11,6 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SearchInJson {
+    /**
+     * Minden adatok kiír ami a a DIARY JSON-ben található, formázva.
+     */
     public static void jsonPrint() {
 
         try {
@@ -74,10 +77,15 @@ public class SearchInJson {
         }
     }
 
-    public static void searchTeacher(String searchTerm) {
-        String filePath = "projekt/src/diary.json";
-        String searchName = searchTerm;
+    /**
+     * Tanár nevére keres rá, kiírja mit tanít.
+     *
+     * @param searchTerm
+     */
 
+    public static void searchTeacher(String searchTerm) {
+        String filePath = FilePath.DIARY;
+        boolean teacherFound = false;
         try {
             String jsonString = new String(Files.readAllBytes(Paths.get(filePath)));
             Gson gson = new Gson();
@@ -89,12 +97,15 @@ public class SearchInJson {
                 String firstName = teacherObject.get("firstName").getAsString();
                 String lastName = teacherObject.get("lastName").getAsString();
                 String subject = teacherObject.get("subject").getAsString();
-                if (firstName.equals(searchName) || lastName.equals(searchName)) {
+                if (firstName.equals(searchTerm) || lastName.equals(searchTerm)) {
                     //  kiíratása
+                    teacherFound = true;
                     System.out.println("Teacher: " + firstName + " " + lastName + ", Subject: " + subject);
                 }
             }
-
+            if (!teacherFound) {
+                System.out.println("A keresett név nem található!");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

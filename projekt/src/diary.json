@@ -17,7 +17,7 @@
     },
     {
       "firstName": "Jedlik",
-      "lastName": "Ányos",
+      "lastName": "János",
       "subject": "TÖRTÉNELEM"
     },
     {
@@ -44,16 +44,6 @@
       "firstName": "Asboth",
       "lastName": "Oszkár",
       "subject": "TESTNEVELÉS"
-    },
-    {
-      "firstName": "Mária",
-      "lastName": "Kovács",
-      "subject": "BIOLOGY"
-    },
-    {
-      "firstName": "Mária",
-      "lastName": "Kovács",
-      "subject": "BIOLOGY"
     }
   ],
   "student": [
