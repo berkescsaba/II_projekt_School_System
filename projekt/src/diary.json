@@ -842,6 +842,32 @@
       },
       "isPresent": true,
       "id": 18
+    },
+    {
+      "subjectsAndGradeList": {
+        "TÖRTÉNELEM": [
+          4,
+          3,
+          2
+        ],
+        "ZENE": [
+          5
+        ],
+        "MATEK": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "sclass": 5,
+      "name": {
+        "firstName": "Tóth",
+        "lastName": "Álmos"
+      },
+      "isPresent": true,
+      "id": 19
     }
   ]
 }

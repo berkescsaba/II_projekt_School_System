@@ -1,22 +1,12 @@
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.DecimalFormat;
-
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
-//        SearchInJson.jsonPrint();
-//        SearchInJson.searchTeacher("János"); // Keresés
+//        Diary.jsonPrint();
+//        Teacher.searchTeacher(); // Keresés
+//        Student.studentAdder();
 
-        MenuSelect.mainMenu();
-//        WriteToJson.studentAdder();
+        Menu.mainMenu();
 
 
     }
