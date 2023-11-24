@@ -560,7 +560,7 @@
       "sclass": 5,
       "name": {
         "firstName": "Rudics",
-        "lastName": "István"
+        "lastName": "Dávid"
       },
       "isPresent": false,
       "id": 11
@@ -735,7 +735,11 @@
     },
     {
       "subjectsAndGradeList": {
-        "BIOLÓGIA": [5,4,3],
+        "BIOLÓGIA": [
+          5,
+          4,
+          3
+        ],
         "TESTNEVELÉS": [
           5,
           5,
@@ -785,27 +789,59 @@
     },
     {
       "subjectsAndGradeList": {
-        "CHEMISTRY": []
+        "MATEK": [
+          2,
+          3,
+          4
+        ]
       },
-      "sclass": 10,
+      "sclass": 5,
       "name": {
-        "firstName": "Péter",
-        "lastName": "Nagy"
+        "firstName": "Végh",
+        "lastName": "Béla"
       },
       "isPresent": true,
       "id": 16
     },
     {
       "subjectsAndGradeList": {
-        "CHEMISTRY": []
+        "MAGYAR": [
+          5,
+          5,
+          5
+        ]
       },
-      "sclass": 10,
+      "sclass": 2,
       "name": {
-        "firstName": "Péter",
-        "lastName": "Nagy"
+        "firstName": "Majom",
+        "lastName": "Proba"
       },
       "isPresent": true,
       "id": 17
+    },
+    {
+      "subjectsAndGradeList": {
+        "TÖRTÉNELEM": [
+          2,
+          3,
+          4
+        ],
+        "MATEK": [
+          5
+        ],
+        "MAGYAR": [
+          4,
+          4,
+          4
+        ]
+      },
+      "sclass": 6,
+      "name": {
+        "firstName": "Bukfenc",
+        "lastName": "Tigris"
+      },
+      "isPresent": true,
+      "id": 18
     }
   ]
 }

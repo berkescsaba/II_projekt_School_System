@@ -6,33 +6,10 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class WriteToJson {
-
-    public static void work() {
-        try {
-            // Meglévő JSON kiolvasása
-            JSONParser parser = new JSONParser();
-            FileReader fileReader = new FileReader(FilePath.DIARY);
-            Object obj = parser.parse(fileReader);
-            JSONObject jsonObject = (JSONObject) obj;
-
-            // Új tanár hozzáadása
-            addNewTeacher(jsonObject, "Kovács", "Mária", "BIOLOGY");
-            // Új tanár hozzáadása
-            addNewStudent(jsonObject, "Nagy", "Péter", 10, "CHEMISTRY");
-
-            // Visszairjuk a módosításokat a JSON file-ba
-            FileWriter fileWriter = new FileWriter(FilePath.DIARY);
-            fileWriter.write(jsonObject.toJSONString());
-            fileWriter.close();
-
-            System.out.println("New teacher and student added successfully!");
-
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-    }
 
     private static void addNewTeacher(JSONObject jsonObject, String lastName, String firstName, String subject) {
         JSONArray teachers = (JSONArray) jsonObject.get("teacher");
@@ -45,7 +22,7 @@ public class WriteToJson {
         teachers.add(newTeacher);
     }
 
-    private static void addNewStudent(JSONObject jsonObject, String lastName, String firstName, int sclass, String subject) {
+    private static void addNewStudent(JSONObject jsonObject, String lastName, String firstName, int sclass, Map<String, List<Integer>> subjectsAndGrades) {
         JSONArray students = (JSONArray) jsonObject.get("student");
 
         JSONObject newStudent = new JSONObject();
@@ -57,9 +34,14 @@ public class WriteToJson {
         newStudent.put("sclass", sclass);
 
         JSONObject subjectsAndGradeList = new JSONObject();
-        subjectsAndGradeList.put(subject, new JSONArray());
-        newStudent.put("subjectsAndGradeList", subjectsAndGradeList);
 
+        for (Map.Entry<String, List<Integer>> entry : subjectsAndGrades.entrySet()) {
+            String subject = entry.getKey();
+            List<Integer> grades = entry.getValue();
+            subjectsAndGradeList.put(subject, grades);
+        }
+
+        newStudent.put("subjectsAndGradeList", subjectsAndGradeList);
         newStudent.put("isPresent", true);
 
         students.add(newStudent);
@@ -72,6 +54,89 @@ public class WriteToJson {
         } else {
             JSONObject lastStudent = (JSONObject) students.get(students.size() - 1);
             return (long) lastStudent.get("id") + 1;
+        }
+    }
+
+    public static void teacherAdder() {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            // Meglévő JSON kiolvasása
+            JSONParser parser = new JSONParser();
+            FileReader fileReader = new FileReader(FilePath.DIARY);
+            Object obj = parser.parse(fileReader);
+            JSONObject jsonObject = (JSONObject) obj;
+
+            // Tanár adatok bekérése
+            System.out.print("Írd be a diák keresztnevét: ");
+            String lastName = scanner.nextLine();
+            System.out.print("Írd be a diák vezetéknevét: ");
+            String firstName = scanner.nextLine();
+            System.out.print("Melyik osztályba jár: ");
+            String subject = scanner.nextLine();
+
+            // Új tanár hozzáadása
+            addNewTeacher(jsonObject, lastName, firstName, subject);
+
+
+            // Visszairjuk a módosításokat a JSON file-ba
+            FileWriter fileWriter = new FileWriter(FilePath.DIARY);
+            fileWriter.write(jsonObject.toJSONString());
+            fileWriter.close();
+
+            System.out.println("Új Tanár hozzáadva!");
+
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void studentAdder() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            // Meglévő JSON kiolvasása
+            JSONParser parser = new JSONParser();
+            FileReader fileReader = new FileReader(FilePath.DIARY);
+            Object obj = parser.parse(fileReader);
+            JSONObject jsonObject = (JSONObject) obj;
+
+            // Új diák adatainak bekérése
+            System.out.print("Írd be a diák keresztnevét: ");
+            String lastName = scanner.nextLine();
+            System.out.print("Írd be a diák vezetéknevét: ");
+            String firstName = scanner.nextLine();
+            System.out.print("Melyik osztályba jár: ");
+            int sclass = scanner.nextInt();
+
+            // Új tantárgyak és jegyek bekérése
+            Map<String, List<Integer>> subjectsAndGrades = new HashMap<>();
+            scanner.nextLine();
+            while (true) {
+                System.out.print("Írj be egy tantárgyat (vagy 'vége' a befelyezéshez): ");
+                String subject = scanner.nextLine();
+                if (subject.equalsIgnoreCase("vége")) {
+                    break;
+                }
+                System.out.print("Írd be az osztályzatokat space-el elválasztva: ");
+                String[] gradesStr = scanner.nextLine().split(" ");
+                List<Integer> grades = Arrays.stream(gradesStr)
+                        .map(Integer::parseInt)
+                        .collect(Collectors.toList());
+                subjectsAndGrades.put(subject, grades);
+            }
+
+            // Új diák hozzáadása a bekért adatokkal
+            addNewStudent(jsonObject, lastName, firstName, sclass, subjectsAndGrades);
+
+            // Visszairjuk a módosításokat a JSON file-ba
+            FileWriter fileWriter = new FileWriter(FilePath.DIARY);
+            fileWriter.write(jsonObject.toJSONString());
+            fileWriter.close();
+
+            System.out.println("Új díák rögzítve!");
+
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
         }
     }
 }

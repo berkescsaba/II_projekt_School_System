@@ -36,7 +36,7 @@ public class MenuSelect {
                     break;
                 } else if (input == 3) {
                     System.out.println("Tanár kereső");
-                    tanarMenu();
+                    SearchInJson.searchTeacher();
                     break;
                 } else {
                     System.out.println("Rossz szám");
@@ -57,7 +57,7 @@ public class MenuSelect {
                 System.out.println("Jegybeírás naplóba: 2");
                 int input = scanner.nextInt();
                 if (input == 1) {
-                    System.out.println("Add meg a diák nevét");
+                    SearchInJson.searchStudent();
                     break;
                 } else if (input == 2) {
                     System.out.println("Add meg a diák nevét majd a tantárgy nevét");
@@ -92,20 +92,6 @@ public class MenuSelect {
             }
         } catch (Exception e) {
             System.out.println("Csak 1 és 2 közül válszthatsz!!!");
-        }
-    }
-
-    public static void tanarMenu() {
-        clearConsole();
-        try {
-            System.out.println("Írd be a tanár kereszt vagy vezetéknevét:");
-            Scanner scanner = new Scanner(System.in);
-
-                String input = scanner.nextLine();
-                SearchInJson.searchTeacher(input);
-
-        } catch (Exception e) {
-            System.out.println("Csak betűket használhatsz!");
         }
     }
 }
