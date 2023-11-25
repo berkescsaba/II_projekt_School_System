@@ -100,39 +100,47 @@
       "subjectsAndGradeList": {
         "BIOLÓGIA": [
           5,
-          5
+          5,
+          3
         ],
         "TESTNEVELÉS": [
           5,
-          5
+          5,
+          4
         ],
         "FIZIKA": [
           5,
           2,
-          1
+          1,
+          5
         ],
         "KÉMIA": [
           2,
           3,
-          4
+          4,
+          2
         ],
         "FÖLDRAJZ": [
           4,
           2,
-          2
+          2,
+          5
         ],
         "TÖRTÉNELEM": [
           4,
-          4
+          4,
+          5
         ],
         "ZENE": [
           1,
+          5,
           5
         ],
         "MATEK": [
           5,
           4,
-          3
+          3,
+          4
         ],
         "MAGYAR": [
           3,
@@ -474,40 +482,49 @@
         "BIOLÓGIA": [
           3,
           2,
-          3
+          3,
+          5
         ],
         "TESTNEVELÉS": [
           5,
-          5
+          5,
+          4
         ],
         "FIZIKA": [
+          2,
           2
         ],
         "KÉMIA": [
           4,
-          5
+          5,
+          1
         ],
         "FÖLDRAJZ": [
           4,
-          4
+          4,
+          3
         ],
         "TÖRTÉNELEM": [
           5,
-          5
+          5,
+          4
         ],
         "ZENE": [
           1,
           2,
-          3
+          3,
+          5
         ],
         "MATEK": [
           2,
           5,
-          5
+          5,
+          3
         ],
         "MAGYAR": [
           2,
-          3
+          3,
+          2
         ]
       },
       "sclass": 8,
@@ -868,6 +885,45 @@
       },
       "isPresent": true,
       "id": 19
+    },
+    {
+      "subjectsAndGradeList": {
+        "TÖRTÉNELEM": [
+          4,
+          4,
+          5,
+          1
+        ],
+        "ZENE": [
+          2,
+          3,
+          4,
+          1,
+          5,
+          5
+        ],
+        "MATEK": [
+          5,
+          4,
+          5,
+          5,
+          1
+        ],
+        "MAGYAR": [
+          5,
+          5,
+          5,
+          1,
+          5
+        ]
+      },
+      "sclass": 8,
+      "name": {
+        "firstName": "Farkas",
+        "lastName": "Csilla"
+      },
+      "isPresent": true,
+      "id": 20
     }
   ]
 }

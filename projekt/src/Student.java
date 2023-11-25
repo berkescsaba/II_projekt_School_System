@@ -55,12 +55,8 @@ public class Student {
     public static void studentAdder() {
         try {
             Scanner scanner = new Scanner(System.in);
-
             // Meglévő JSON kiolvasása
-            JSONParser parser = new JSONParser();
-            FileReader fileReader = new FileReader(FilePath.DIARY);
-            Object obj = parser.parse(fileReader);
-            JSONObject jsonObject = (JSONObject) obj;
+            JSONObject jsonObject = JsonHandler.jsonReader();
 
             // Új diák adatainak bekérése
             System.out.print("Írd be a diák keresztnevét: ");
@@ -74,7 +70,7 @@ public class Student {
             Map<String, List<Integer>> subjectsAndGrades = new HashMap<>();
             scanner.nextLine();
             while (true) {
-                System.out.print("Írj be egy tantárgyat (vagy 'vége' a befelyezéshez): ");
+                System.out.print("Írj be egy tantárgyat (vagy 'vége' a befejezéshez): ");
                 String subject = scanner.nextLine();
                 if (subject.equalsIgnoreCase("vége")) {
                     break;
@@ -91,11 +87,10 @@ public class Student {
             addNewStudent(jsonObject, lastName, firstName, sclass, subjectsAndGrades);
 
             // Visszairjuk a módosításokat a JSON file-ba
-            FileWriter fileWriter = new FileWriter(FilePath.DIARY);
-            fileWriter.write(jsonObject.toJSONString());
-            fileWriter.close();
+            JsonHandler.fileWrite(jsonObject);
 
             System.out.println("Új díák rögzítve!");
+            Menu.mainMenu();
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -105,7 +100,7 @@ public class Student {
     public static void searchStudent() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Kérlek írd be a diák kereszt vagy vezetéknevét: ");
-        String searchTerm = scanner.nextLine();
+        String searchTerm = scanner.nextLine().toLowerCase();
         String filePath = FilePath.DIARY;
         boolean studentFound = false;
 
@@ -118,15 +113,16 @@ public class Student {
             for (JsonElement studentElement : studentsArray) {
                 JsonObject studentObject = studentElement.getAsJsonObject();
                 JsonObject nameObject = studentObject.getAsJsonObject("name");
-                String firstName = nameObject.get("firstName").getAsString();
-                String lastName = nameObject.get("lastName").getAsString();
+                String firstName = nameObject.get("firstName").getAsString().toLowerCase();
+                String lastName = nameObject.get("lastName").getAsString().toLowerCase();
 
-                if (firstName.equals(searchTerm) || lastName.equals(searchTerm)) {
-                    // Print student details
+                if (firstName.contains(searchTerm) || lastName.contains(searchTerm)) {
+                    // Diák neve
                     studentFound = true;
-                    System.out.println("Student: " + firstName + " " + lastName);
+                    System.out.println("Student: " + nameObject.get("firstName").getAsString() + " " +
+                            nameObject.get("lastName").getAsString());
 
-                    // Print subjects and grades
+                    // Tantárgy, jegyek, átlag kiíratás
                     JsonObject subjectsAndGradeList = studentObject.getAsJsonObject("subjectsAndGradeList");
                     for (Map.Entry<String, JsonElement> entry : subjectsAndGradeList.entrySet()) {
                         String subject = entry.getKey();
@@ -141,20 +137,23 @@ public class Student {
                         System.out.println("  Tantárgy: " + subject + ", Jegyek: " + gradesArray + ", Átlag: " + df.format(average));
                     }
 
-                    // Print other details like class, id, and presence
+                    // Osztály, ID és jelenlét kiírása
                     int sclass = studentObject.get("sclass").getAsInt();
                     boolean isPresent = studentObject.get("isPresent").getAsBoolean();
                     int id = studentObject.get("id").getAsInt();
 
                     System.out.println("Osztály: " + sclass + ", ID: " + id + ", Present: " + isPresent);
+                    System.out.println();
                 }
             }
-
             if (!studentFound) {
                 System.out.println("A keresett név nem található!");
+                Menu.mainMenu();
             }
+            Menu.mainMenu();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

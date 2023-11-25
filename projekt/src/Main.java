@@ -8,6 +8,7 @@ public class Main {
 
         Menu.mainMenu();
 
+//        GradeManager.studentGrader();
 
     }
 }
