@@ -755,7 +755,8 @@
         "BIOLÓGIA": [
           5,
           4,
-          3
+          3,
+          5
         ],
         "TESTNEVELÉS": [
           5,
@@ -844,12 +845,16 @@
           4
         ],
         "MATEK": [
+          5,
+          3,
+          4,
           5
         ],
         "MAGYAR": [
           4,
           4,
-          4
+          4,
+          5
         ]
       },
       "sclass": 6,
@@ -924,6 +929,22 @@
       },
       "isPresent": true,
       "id": 20
+    },
+    {
+      "subjectsAndGradeList": {
+        "PROGRAMOZÁS": [
+          5,
+          5,
+          5
+        ]
+      },
+      "sclass": 5,
+      "name": {
+        "firstName": "Pintér",
+        "lastName": "Máté"
+      },
+      "isPresent": true,
+      "id": 21
     }
   ]
 }

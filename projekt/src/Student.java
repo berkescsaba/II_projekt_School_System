@@ -4,11 +4,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -41,7 +38,6 @@ public class Student {
 
         students.add(newStudent);
     }
-
     private static long getNextStudentId(JSONObject jsonObject) {
         JSONArray students = (JSONArray) jsonObject.get("student");
         if (students.isEmpty()) {
@@ -51,8 +47,8 @@ public class Student {
             return (long) lastStudent.get("id") + 1;
         }
     }
-
     public static void studentAdder() {
+        Menu.clearConsole();
         try {
             Scanner scanner = new Scanner(System.in);
             // Meglévő JSON kiolvasása
@@ -90,14 +86,14 @@ public class Student {
             JsonHandler.fileWrite(jsonObject);
 
             System.out.println("Új díák rögzítve!");
-            Menu.mainMenu();
+            Menu.diakMenu();
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
-
     public static void searchStudent() {
+        Menu.clearConsole();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Kérlek írd be a diák kereszt vagy vezetéknevét: ");
         String searchTerm = scanner.nextLine().toLowerCase();
@@ -119,7 +115,7 @@ public class Student {
                 if (firstName.contains(searchTerm) || lastName.contains(searchTerm)) {
                     // Diák neve
                     studentFound = true;
-                    System.out.println("Student: " + nameObject.get("firstName").getAsString() + " " +
+                    System.out.println("Diák: " + nameObject.get("firstName").getAsString() + " " +
                             nameObject.get("lastName").getAsString());
 
                     // Tantárgy, jegyek, átlag kiíratás
@@ -140,17 +136,22 @@ public class Student {
                     // Osztály, ID és jelenlét kiírása
                     int sclass = studentObject.get("sclass").getAsInt();
                     boolean isPresent = studentObject.get("isPresent").getAsBoolean();
+                    String hianyzas;
+                    if (isPresent){
+                        hianyzas = "Igen";
+                    } else {
+                        hianyzas = "Nincs";
+                    }
                     int id = studentObject.get("id").getAsInt();
-
-                    System.out.println("Osztály: " + sclass + ", ID: " + id + ", Present: " + isPresent);
+                    System.out.println("Osztály: " + sclass + ", ID: " + id + ", Jelen van: " + hianyzas);
                     System.out.println();
                 }
             }
             if (!studentFound) {
                 System.out.println("A keresett név nem található!");
-                Menu.mainMenu();
+                Menu.diakMenu();
             }
-            Menu.mainMenu();
+            Menu.diakMenu();
         } catch (IOException e) {
             e.printStackTrace();
         }

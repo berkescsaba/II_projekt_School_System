@@ -119,19 +119,11 @@ public class GradeManager {
         return grades;
     }
 
-//    private static void updateJsonFile(JSONObject data) {
-//        try (FileWriter file = new FileWriter(FilePath.DIARY)) {
-//            file.write(data.toJSONString());
-//            System.out.println("Grades updated successfully." + studentNameToString());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     private static void updateJsonFile(JSONObject data, JSONObject student) {
         try (FileWriter file = new FileWriter(FilePath.DIARY)) {
             file.write(data.toJSONString());
             System.out.println(studentNameToString((JSONObject) student.get("name")) + " jegyei sikeresen frissítve!");
+            Menu.mainMenu();
         } catch (IOException e) {
             e.printStackTrace();
         }

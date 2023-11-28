@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
 
 public class Diary {
     public static void jsonPrint() {
-
+        Menu.clearConsole();
         try {
             // Tartalom beolvasása JSON-bol
             String jsonString = new String(Files.readAllBytes(Paths.get(FilePath.DIARY)));
@@ -65,8 +65,16 @@ public class Diary {
                     System.out.println("  Tantárgy: " + subject + ", Jegyek: " + gradesArray + ", Átlag: " + df.format(average));
                 }
                 boolean isPresent = studentObject.get("isPresent").getAsBoolean();
-                System.out.println("  Jelen van: " + isPresent);
+                String hianyzas;
+                if (isPresent){
+                    hianyzas = "Igen";
+                } else {
+                    hianyzas = "Nincs";
+                }
+                System.out.println("  Jelen van: " + hianyzas);
+                System.out.println();
             }
+            Menu.mainMenu();
         } catch (IOException e) {
             e.printStackTrace();
         }

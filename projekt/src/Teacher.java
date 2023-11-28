@@ -4,11 +4,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,6 +23,7 @@ public class Teacher {
         teachers.add(newTeacher);
     }
     public static void teacherAdder() {
+        Menu.clearConsole();
         Scanner scanner = new Scanner(System.in);
         try {
             // Meglévő JSON kiolvasása
@@ -46,16 +44,14 @@ public class Teacher {
             JsonHandler.fileWrite(jsonObject);
 
             System.out.println("Új Tanár hozzáadva!");
-            Menu.mainMenu();
+            Menu.tanarMenu();
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
-
-
-
     public static void searchTeacher() {
+        Menu.clearConsole();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Kérlek írd be a tanár kereszt vagy vezeték, vagy a tantárgy nevét : ");
         String searchTerm = scanner.nextLine();
@@ -76,12 +72,12 @@ public class Teacher {
                     //  kiíratása
                     teacherFound = true;
                     System.out.println("Tanár: " + firstName + " " + lastName + ", Tantárgy: " + subject);
-                    Menu.mainMenu();
+                    Menu.tanarMenu();
                 }
             }
             if (!teacherFound) {
                 System.out.println("A tanár nem található!");
-                searchTeacher();
+                Menu.tanarMenu();
             }
         } catch (IOException e) {
             e.printStackTrace();
