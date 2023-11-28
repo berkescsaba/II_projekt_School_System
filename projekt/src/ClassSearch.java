@@ -58,9 +58,14 @@ public class ClassSearch {
                     System.out.println();
                 }
             }
-            Menu.osztalyMenu();
             if (!classFound) {
                 System.out.println("A keresett osztályban nincsenek diákok!");
+//                Menu.osztalyMenu();
+            }
+            Scanner scanner2= new Scanner(System.in);
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            String exit = scanner2.nextLine();
+            if (exit.isEmpty()) {
                 Menu.osztalyMenu();
             }
 

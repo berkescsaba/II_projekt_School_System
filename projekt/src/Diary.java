@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class Diary {
     public static void jsonPrint() {
@@ -74,7 +75,12 @@ public class Diary {
                 System.out.println("  Jelen van: " + hianyzas);
                 System.out.println();
             }
-            Menu.mainMenu();
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            Scanner scanner = new Scanner(System.in);
+            String exit = scanner.nextLine();
+            if (exit.isEmpty()) {
+                Menu.mainMenu();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

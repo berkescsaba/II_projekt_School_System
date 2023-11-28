@@ -86,7 +86,11 @@ public class Student {
             JsonHandler.fileWrite(jsonObject);
 
             System.out.println("Új díák rögzítve!");
-            Menu.diakMenu();
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            String exit = scanner.nextLine();
+            if (exit.isEmpty()) {
+                Menu.diakMenu();
+            }
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -151,7 +155,12 @@ public class Student {
                 System.out.println("A keresett név nem található!");
                 Menu.diakMenu();
             }
-            Menu.diakMenu();
+
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            String exit = scanner.nextLine();
+            if (exit.isEmpty()) {
+                Menu.diakMenu();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

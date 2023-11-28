@@ -123,7 +123,12 @@ public class GradeManager {
         try (FileWriter file = new FileWriter(FilePath.DIARY)) {
             file.write(data.toJSONString());
             System.out.println(studentNameToString((JSONObject) student.get("name")) + " jegyei sikeresen frissítve!");
-            Menu.mainMenu();
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            String exit = scanner.nextLine();
+            if (exit.isEmpty()) {
+                Menu.diakMenu();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

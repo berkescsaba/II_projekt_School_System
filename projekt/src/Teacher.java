@@ -22,6 +22,7 @@ public class Teacher {
 
         teachers.add(newTeacher);
     }
+
     public static void teacherAdder() {
         Menu.clearConsole();
         Scanner scanner = new Scanner(System.in);
@@ -44,41 +45,56 @@ public class Teacher {
             JsonHandler.fileWrite(jsonObject);
 
             System.out.println("Új Tanár hozzáadva!");
-            Menu.tanarMenu();
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            String exit = scanner.nextLine();
+            if (exit.isEmpty()) {
+                Menu.tanarMenu();
+            }
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
+
     public static void searchTeacher() {
         Menu.clearConsole();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Kérlek írd be a tanár kereszt vagy vezeték, vagy a tantárgy nevét : ");
-        String searchTerm = scanner.nextLine();
+        System.out.print("Kérlek írd be a tanár kereszt vagy vezeték, vagy a tantárgy nevét: ");
+        String searchTerm = scanner.nextLine().toLowerCase().trim();
         String filePath = FilePath.DIARY;
         boolean teacherFound = false;
+
         try {
-            String jsonString = new String(Files.readAllBytes(Paths.get(filePath)));
+            String jsonString = Files.readString(Paths.get(filePath));
             Gson gson = new Gson();
             JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
 
             JsonArray teachersArray = jsonObject.getAsJsonArray("teacher");
+
             for (JsonElement teacherElement : teachersArray) {
                 JsonObject teacherObject = teacherElement.getAsJsonObject();
-                String firstName = teacherObject.get("firstName").getAsString();
-                String lastName = teacherObject.get("lastName").getAsString();
-                String subject = teacherObject.get("subject").getAsString();
-                if (firstName.toLowerCase().contains(searchTerm) || lastName.toLowerCase().contains(searchTerm) || subject.toLowerCase().contains(searchTerm)) {
-                    //  kiíratása
+                String firstName = teacherObject.get("firstName").getAsString().toLowerCase();
+                String lastName = teacherObject.get("lastName").getAsString().toLowerCase();
+                String subject = teacherObject.get("subject").getAsString().toLowerCase();
+
+                if (firstName.contains(searchTerm) || lastName.contains(searchTerm) || subject.contains(searchTerm)) {
+                    // tanár kiiratása
                     teacherFound = true;
-                    System.out.println("Tanár: " + firstName + " " + lastName + ", Tantárgy: " + subject);
-                    Menu.tanarMenu();
+                    System.out.println("Tanár: " + teacherObject.get("firstName") + " " +
+                            teacherObject.get("lastName") + ", Tantárgy: " + teacherObject.get("subject"));
                 }
             }
+
             if (!teacherFound) {
                 System.out.println("A tanár nem található!");
+            }
+            System.out.println("Kilépéshez nyomj egy ENTERT.");
+            String exit = scanner.nextLine();
+            if (exit.isEmpty()) {
                 Menu.tanarMenu();
             }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
