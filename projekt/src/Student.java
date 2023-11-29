@@ -155,9 +155,9 @@ public class Student {
                 System.out.println("A keresett név nem található!");
                 Menu.diakMenu();
             }
-
+            Scanner scanner1 = new Scanner(System.in);
             System.out.println("Kilépéshez nyomj egy ENTERT.");
-            String exit = scanner.nextLine();
+            String exit = scanner1.nextLine();
             if (exit.isEmpty()) {
                 Menu.diakMenu();
             }

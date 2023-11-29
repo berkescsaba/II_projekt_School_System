@@ -14,6 +14,7 @@ public class GradeManager {
 
     public static void studentGrader() {
         try {
+            Menu.clearConsole();
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(new FileReader(FilePath.DIARY));
 
